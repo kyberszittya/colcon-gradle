@@ -126,7 +126,7 @@ class GradleBuildTask(TaskExtensionPoint):
         if has_wrapper_executable(args):
             cmd = [str(get_wrapper_executable(args).absolute())]
         elif GRADLE_EXECUTABLE is not None:
-            cmd = [GRADLE_EXECUTABLE]
+            cmd = [str(GRADLE_EXECUTABLE)]
         else:
             raise RuntimeError(
                 "Could not find 'gradle' or 'wrapper' executable")
